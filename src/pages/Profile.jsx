@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase'
 import { POST_SELECT } from '../lib/posts'
 import { useAuth } from '../context/AuthContext'
 import PostCard from '../components/PostCard'
+import FriendActions from '../components/FriendActions'
 
 export default function Profile() {
   const { username } = useParams()
@@ -86,9 +87,12 @@ export default function Profile() {
           </p>
         </div>
         {!esMio && (
-          <button className={siguiendo ? 'secondary' : ''} onClick={toggleSeguir}>
-            {siguiendo ? 'Dejar de seguir' : 'Seguir'}
-          </button>
+          <div className="profile-actions">
+            <button className={siguiendo ? 'secondary' : ''} onClick={toggleSeguir}>
+              {siguiendo ? 'Dejar de seguir' : 'Seguir'}
+            </button>
+            <FriendActions otherId={perfil.id} />
+          </div>
         )}
       </header>
 

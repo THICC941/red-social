@@ -111,3 +111,45 @@ a { color: var(--accent); }
 
 .profile-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .profile-head h1 { margin-bottom: 4px; }
+
+/* Barra de navegación */
+.topnav { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+.topnav-inner { max-width: 600px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.brand { font-weight: 700; color: var(--fg); text-decoration: none; margin-right: auto; }
+.links { display: flex; gap: 12px; flex-wrap: wrap; }
+.links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.links a.active { color: var(--fg); }
+.small { font-size: 0.85rem; padding: 6px 12px; }
+.topnav .muted { display: block; max-width: 600px; margin: 0 auto; padding: 0 16px 8px; }
+
+/* Buscador y listas de usuarios */
+.search { flex-direction: row; }
+.search input { flex: 1; }
+.user-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap;
+}
+.user-row a { color: var(--fg); text-decoration: none; }
+.user-row .small { margin-top: 4px; }
+.row-actions { display: flex; gap: 8px; }
+.section-title { font-size: 1rem; margin: 24px 0 4px; color: var(--muted); }
+.friend-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.profile-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.chat-row { text-decoration: none; color: var(--fg); }
+
+/* Chat */
+.chat { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; height: calc(100vh - 60px); padding: 0 16px; }
+.chat-head { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.chat-head a { color: var(--accent); text-decoration: none; }
+.chat-log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding: 12px 0; }
+.bubble-row { display: flex; justify-content: flex-start; }
+.bubble-row.mine { justify-content: flex-end; }
+.bubble { max-width: 75%; background: var(--line); border-radius: 16px; padding: 8px 12px; }
+.bubble.mine { background: var(--accent); color: #fff; }
+.bubble p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.bubble img, .bubble video { max-width: 100%; border-radius: 10px; margin-top: 6px; }
+.bubble .time { display: block; font-size: 0.7rem; opacity: 0.7; margin-top: 4px; text-align: right; }
+.chat-input { border-top: 1px solid var(--line); padding: 10px 0 14px; display: flex; flex-direction: column; gap: 6px; }
+.chat-input-row { display: flex; gap: 8px; align-items: center; }
+.chat-input-row input { flex: 1; }
+.chat-file { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--muted); }

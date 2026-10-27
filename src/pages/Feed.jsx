@@ -6,7 +6,7 @@ import Composer from '../components/Composer'
 import PostCard from '../components/PostCard'
 
 export default function Feed() {
-  const { user, profile, signOut } = useAuth()
+  const { user } = useAuth()
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -28,13 +28,7 @@ export default function Feed() {
 
   return (
     <main className="feed">
-      <header>
-        <h1>Para ti</h1>
-        <nav>
-          <span>@{profile?.username ?? user?.email}</span>
-          <button className="secondary" onClick={() => signOut()}>Salir</button>
-        </nav>
-      </header>
+      <h1>Para ti</h1>
 
       <Composer userId={user.id} onPosted={cargarPosts} />
 
