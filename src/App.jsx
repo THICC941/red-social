@@ -9,6 +9,7 @@ import Friends from './pages/Friends'
 import Messages from './pages/Messages'
 import Chat from './pages/Chat'
 import Nav from './components/Nav'
+import Notifier from './components/Notifier'
 
 function RequireAuth({ children }) {
   const { user, loading } = useAuth()
@@ -17,11 +18,12 @@ function RequireAuth({ children }) {
   return children
 }
 
-// Pantallas que requieren sesión: comparten la barra de navegación
+// Pantallas que requieren sesión: comparten la barra de navegación y los avisos
 function Layout() {
   return (
     <RequireAuth>
       <Nav />
+      <Notifier />
       <Outlet />
     </RequireAuth>
   )

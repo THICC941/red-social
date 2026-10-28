@@ -155,13 +155,13 @@ export default function Chat() {
       <form className="chat-input" onSubmit={enviar}>
         {file && (
           <div className="chat-file">
-            <span>📎 {file.name}</span>
+            <span>Archivo: {file.name}</span>
             <button type="button" className="link-btn" onClick={() => setFile(null)}>Quitar</button>
           </div>
         )}
         <div className="chat-input-row">
           <label className="file-btn">
-            📎
+            + Archivo
             <input type="file" accept="image/*,video/*" hidden
               onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
           </label>

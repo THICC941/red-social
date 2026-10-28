@@ -93,7 +93,7 @@ export default function PostCard({ post, userId, onDeleted }) {
           {liked ? '♥' : '♡'} {likes.length}
         </button>
         <button className="link-btn" onClick={toggleComments}>
-          💬 {commentCount}
+          Comentarios ({commentCount})
         </button>
       </div>
 

@@ -79,7 +79,7 @@ export default function Composer({ userId, onPosted }) {
       )}
       <div className="composer-actions">
         <label className="file-btn">
-          📎 Imagen o video
+          + Imagen o video
           <input
             ref={inputRef}
             type="file"
