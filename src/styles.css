@@ -4,8 +4,8 @@
    ========================================================== */
 
 :root {
-  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
-  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Playfair Display", Georgia, "Times New Roman", serif;
   --ink: #0d0c0a;
   --paper: #f4ecd4;
   --paper-2: #e9dfc2;
