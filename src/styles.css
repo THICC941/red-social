@@ -4,6 +4,8 @@
    ========================================================== */
 
 :root {
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --ink: #0d0c0a;
   --paper: #f4ecd4;
   --paper-2: #e9dfc2;
@@ -27,17 +29,18 @@ body {
     repeating-conic-gradient(from 0deg at 50% -20%, rgba(255, 194, 26, 0.09) 0deg 5deg, transparent 5deg 10deg);
   background-attachment: fixed;
   color: var(--ink);
-  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, .brand, .section-title, .center {
-  font-family: "Anton", Impact, "Arial Narrow", sans-serif;
+  font-family: var(--font-display);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-weight: 900;
+  line-height: 0.95;
 }
 
 h1 { font-size: 2.1rem; line-height: 1.05; margin: 6px 0 16px; }
@@ -81,7 +84,7 @@ main {
 }
 .links { display: flex; gap: 14px; flex-wrap: wrap; }
 .links a {
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
@@ -96,8 +99,8 @@ main {
 
 /* ---------- Botones ---------- */
 button {
-  font-family: "Archivo", sans-serif;
-  font-weight: 800;
+  font-family: var(--font-body);
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
@@ -177,7 +180,8 @@ input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px var(--yellow)
 
 .file-btn {
   cursor: pointer;
-  font-weight: 800;
+  font-family: var(--font-body);
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
@@ -222,7 +226,7 @@ input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px var(--yellow)
   gap: 6px;
 }
 .comment { font-size: 0.95rem; overflow-wrap: anywhere; }
-.comment a { font-weight: 800; color: var(--ink); text-decoration: none; }
+.comment a { font-weight: 700; color: var(--ink); text-decoration: none; }
 .comment-form { display: flex; gap: 6px; }
 .comment-form input { flex: 1; padding: 6px 10px; }
 
@@ -248,7 +252,7 @@ input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px var(--yellow)
   border-bottom: 2px solid var(--ink);
   flex-wrap: wrap;
 }
-.user-row a { color: var(--ink); text-decoration: none; font-weight: 800; }
+.user-row a { color: var(--ink); text-decoration: none; font-weight: 700; }
 .user-row a:hover { text-decoration: underline; text-decoration-thickness: 3px; }
 .user-row .small { margin-top: 4px; }
 
@@ -296,8 +300,8 @@ input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px var(--yellow)
   background: var(--ink);
   color: var(--paper);
 }
-.chat-head a { color: var(--yellow); font-weight: 800; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; }
-.chat-head strong { font-family: "Anton", Impact, sans-serif; text-transform: uppercase; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.02em; }
+.chat-head a { color: var(--yellow); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; }
+.chat-head strong { font-family: var(--font-display); text-transform: uppercase; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.01em; }
 .chat-head .muted { color: #cfc6a8; }
 .chat-log {
   flex: 1;
@@ -352,11 +356,11 @@ input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px var(--yellow)
 }
 .toast strong {
   display: block;
-  font-family: "Anton", Impact, sans-serif;
+  font-family: var(--font-display);
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 0.01em;
 }
 .toast p { margin: 4px 0 10px; overflow-wrap: anywhere; }
 .toast-actions { display: flex; gap: 8px; }
