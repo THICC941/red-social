@@ -24,9 +24,14 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #161411;
+  background-color: #7a2a0a;
   background-image:
-    repeating-conic-gradient(from 0deg at 50% -20%, rgba(255, 194, 26, 0.09) 0deg 5deg, transparent 5deg 10deg);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 180' preserveAspectRatio='none'%3E%3Cpath fill='%230d0c0a' d='M0 180V110H40V70H70V110H120V90H160V40H182V90H212V100H272V60H307V20H321V60H361V80H411V120H456V50H486V120H526V95H576V130H611V70H641V130H696V105H736V45H761V105H821V90H866V130H916V75H946V110H990V60H1020V100H1070V80H1110V120H1150V90H1200V180Z'/%3E%3C/svg%3E"),
+    repeating-conic-gradient(from 0deg at 40% 55%, rgba(255, 245, 200, 0.22) 0deg 7deg, transparent 7deg 16deg),
+    radial-gradient(ellipse at 40% 55%, #ffd23a 0%, #ff9a1a 35%, #e0461a 70%, #5a1a08 100%);
+  background-size: 100% 22vh, auto, auto;
+  background-position: bottom center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
