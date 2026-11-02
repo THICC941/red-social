@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -8,13 +8,16 @@ import Search from './pages/Search'
 import Friends from './pages/Friends'
 import Messages from './pages/Messages'
 import Chat from './pages/Chat'
+import PostPage from './pages/PostPage'
 import Nav from './components/Nav'
 import Notifier from './components/Notifier'
 
 function RequireAuth({ children }) {
   const { user, loading } = useAuth()
+  const location = useLocation()
   if (loading) return <p className="center">Cargando...</p>
-  if (!user) return <Navigate to="/login" replace />
+  // Guarda a dónde iba (ej. un link compartido) para volver después de entrar
+  if (!user) return <Navigate to="/login" replace state={{ from: location.pathname }} />
   return children
 }
 
@@ -43,6 +46,7 @@ export default function App() {
             <Route path="/mensajes" element={<Messages />} />
             <Route path="/mensajes/:id" element={<Chat />} />
             <Route path="/u/:username" element={<Profile />} />
+            <Route path="/p/:id" element={<PostPage />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

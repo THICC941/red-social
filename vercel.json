@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/p/:id",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i).*(whatsapp|facebookexternalhit|facebot|twitterbot|telegrambot|slackbot|discordbot|linkedinbot|skypeuripreview|pinterest|embedly|redditbot|googlebot|bingbot).*"
+        }
+      ],
+      "destination": "/api/post?id=:id"
+    },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}

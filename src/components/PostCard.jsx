@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { tiempoRelativo } from '../lib/posts'
+import ShareButton from './ShareButton'
 
-export default function PostCard({ post, userId, onDeleted }) {
+export default function PostCard({ post, userId, onDeleted, startOpen = false }) {
   const [likes, setLikes] = useState(post.likes ?? [])
   const [commentCount, setCommentCount] = useState(post.comments?.length ?? 0)
-  const [showComments, setShowComments] = useState(false)
+  const [showComments, setShowComments] = useState(startOpen)
   const [comments, setComments] = useState([])
   const [loadingComments, setLoadingComments] = useState(false)
   const [newComment, setNewComment] = useState('')
@@ -42,6 +43,11 @@ export default function PostCard({ post, userId, onDeleted }) {
     if (error) return setError(error.message)
     setComments(data ?? [])
   }
+
+  useEffect(() => {
+    if (startOpen) cargarComentarios()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   function toggleComments() {
     const abrir = !showComments
@@ -95,6 +101,7 @@ export default function PostCard({ post, userId, onDeleted }) {
         <button className="link-btn" onClick={toggleComments}>
           Comentarios ({commentCount})
         </button>
+        <ShareButton post={post} />
       </div>
 
       {showComments && (
